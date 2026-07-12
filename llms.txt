@@ -1,0 +1,24 @@
+# Etayons
+
+> Etayons est un bureau d'études externalisé : un relais de compétences techniques francophones à Madagascar, synchrone avec l'Europe, pour renforcer les bureaux d'études français. Domaines : économie de la construction, structure béton armé, VRD, électricité, BIM. Opérationnel en 3 semaines, cadre contractuel B2B flexible, période d'essai de 3 mois. Etayons dispose d'un bureau en France (Paris) et de son siège opérationnel à Antananarivo (Madagascar).
+
+## Pages principales
+- [Accueil](https://etayons.fr/) : le modèle Etayons, les trois piliers (Talents, Expertise, Performance), cas clients.
+- [À propos](https://etayons.fr/a-propos) : vision, méthodologie en 4 étapes, gouvernance et engagements, FAQ.
+- [Carrière](https://etayons.fr/carriere) : rejoindre Etayons à Antananarivo, proposition employeur, métiers recherchés.
+- [Contact](https://etayons.fr/contact) : demande de renfort technique ou candidature.
+- [Mentions légales](https://etayons.fr/mentions-legales)
+
+## Métiers et fiches de poste
+- [Économiste de la Construction](https://etayons.fr/carriere/economiste)
+- [Chargé(e) d'études Structure (BA)](https://etayons.fr/carriere/structure-ba)
+- [Chargé(e) d'études VRD](https://etayons.fr/carriere/vrd)
+- [Chargé(e) d'études Électricité](https://etayons.fr/carriere/electricite)
+- [BIM Modeleur](https://etayons.fr/carriere/bim-modeleur)
+- [Assistant(e) technique](https://etayons.fr/carriere/assistant-technique)
+
+## Contact
+- Email : contact@etayons.fr
+- Téléphone : +33 6 09 99 53 88
+- Bureau France : Paris. Siège opérationnel : Antananarivo, Madagascar.
+- LinkedIn : https://www.linkedin.com/company/etayons/
