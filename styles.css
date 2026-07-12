@@ -45,9 +45,23 @@ footer{background:var(--marine-deep);color:rgba(255,255,255,.7)}
 .faq-a{margin:0 0 2rem;background:#fff;color:var(--mut);padding:1.5rem 2rem;line-height:1.8;border-left:3px solid var(--or-d)}
 .metier-card:hover{background:var(--marine)!important}
 
+/* ===== En-tête agrandi ===== */
+.hdr{height:96px}
+.logo img{height:56px!important;width:56px!important}
+.logo span span:first-child{font-size:1.32rem!important}
+[style*="min-height:calc(100vh - 80px)"]{min-height:calc(100vh - 96px)!important}
+
+/* ===== Héros de pages harmonisés (À propos / Carrière / Contact) ===== */
+.pagehero{display:flex;flex-direction:column;justify-content:flex-start;min-height:400px}
+.pagehero>.wrap{padding-top:4rem!important;padding-bottom:4rem!important}
+@media (max-width:760px){.pagehero{min-height:340px}}
+@media (max-width:600px){.pagehero{min-height:300px}.pagehero>.wrap{padding-top:3rem!important;padding-bottom:3rem!important}}
+
 /* ===== Responsive (mobile / tablette) ===== */
-html,body{overflow-x:hidden;max-width:100%}
+html,body{overflow-x:clip;max-width:100%}
 img{max-width:100%}
+/* en-tête toujours visible au défilement */
+header{position:sticky!important;top:0!important;z-index:100!important;box-shadow:0 2px 12px rgba(0,0,0,.18)}
 @media (max-width:900px){
   [style*="grid-template-columns:1.8fr 1fr"],
   [style*="grid-template-columns:1.6fr 1fr"],
@@ -74,9 +88,24 @@ img{max-width:100%}
   header nav{gap:.85rem!important}
   .navl{font-size:.8rem}
   .logo span span:last-child{display:none}
-  .logo img{height:38px!important;width:38px!important}
+  .hdr{height:78px}
+  .logo img{height:46px!important;width:46px!important}
   [style*="font-size:4.2rem"],[style*="font-size:4rem"],[style*="font-size:3.8rem"]{font-size:2.2rem!important}
   [style*="font-size:1.9rem"]{font-size:1.55rem!important}
   [style*="padding:3rem"]{padding:1.75rem!important}
   section[style*="padding:6rem 0"]{padding-top:3.5rem!important;padding-bottom:3.5rem!important}
+}
+/* ---- Zones tactiles >=48px & lisibilité (>=12px) sur mobile ---- */
+@media (max-width:900px){
+  header nav .navl{min-height:46px;display:inline-flex;align-items:center}
+  footer .navl{min-height:40px;display:inline-flex;align-items:center;padding:5px 0}
+  .btnp,.btns{min-height:48px}
+  a[aria-label*="LinkedIn"],a[aria-label*="Facebook"]{height:46px!important;width:46px!important}
+  [aria-label="Cas précédent"],[aria-label="Cas suivant"]{height:48px!important;width:48px!important}
+  .uc-dot{min-height:22px!important}
+  /* remonter tout texte < 12px à 12px */
+  [style*="font-size:9px"],[style*="font-size:10px"],[style*="font-size:11px"],
+  [style*="font-size:.62rem"],[style*="font-size:.65rem"],[style*="font-size:.68rem"],
+  [style*="font-size:.7rem"],[style*="font-size:.72rem"],[style*="font-size:.73rem"]{font-size:12px!important}
+  [style*="font-size:.75rem"]{font-size:12px!important}
 }
