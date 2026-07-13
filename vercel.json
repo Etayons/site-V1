@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/carriere/electricite", "destination": "/carriere/responsable-etudes-prix", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -11,11 +11,11 @@
 
 ## Métiers et fiches de poste
 - [Économiste de la Construction](https://etayons.fr/carriere/economiste)
-- [Chargé(e) d'études Structure (BA)](https://etayons.fr/carriere/structure-ba)
+- [Ingénieur(e) Structure Béton Armé](https://etayons.fr/carriere/structure-ba)
 - [Chargé(e) d'études VRD](https://etayons.fr/carriere/vrd)
-- [Chargé(e) d'études Électricité](https://etayons.fr/carriere/electricite)
+- [Responsable Études de Prix GO/TCE](https://etayons.fr/carriere/responsable-etudes-prix)
 - [BIM Modeleur](https://etayons.fr/carriere/bim-modeleur)
-- [Assistant(e) technique](https://etayons.fr/carriere/assistant-technique)
+- [Assistant(e) Technique Bureau d'Études](https://etayons.fr/carriere/assistant-technique)
 
 ## Contact
 - Email : contact@etayons.fr
