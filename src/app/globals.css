@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── ETAYONS V2 · Design tokens ─── palette V4 · arrondis SaaS ─── */
+@layer base {
+  :root {
+    /* Surfaces (triplets oklch, consommés via oklch(var(--x) / alpha)) */
+    --background: 0.24 0.06 258; /* marine V4 */
+    --background-deep: 0.19 0.055 258; /* sections alternées */
+
+    /* Accent or V4 */
+    --primary: 0.78 0.14 78; /* CTA, badges */
+    --primary-strong: 0.65 0.13 70; /* hover, bordures actives, texte sur fond marine */
+    /* Or assombri réservé au texte sur fond clair : 4.78:1 contre blanc (WCAG AA).
+       L'or standard ne monte qu'à 3.32:1 et échoue sur du petit texte. */
+    --primary-on-light: 0.56 0.13 70;
+
+    /* Texte */
+    --foreground-on-dark: 0.82 0.03 258;
+    --muted-foreground: 0.5 0.03 258;
+    --border-light: 0.92 0.01 258;
+
+    /* Glassmorphism */
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.04);
+
+    /* Arrondis SaaS (shadcn) */
+    --radius: 0.5rem;
+    --radius-sm: 0.375rem;
+
+    /* Ombre signature : halo doux teinté or */
+    --shadow-gold: 0 8px 30px oklch(var(--primary) / 0.18);
+    --shadow-gold-soft: 0 8px 30px oklch(var(--primary) / 0.12);
+  }
+
+  body {
+    @apply font-body bg-white text-marine-deep antialiased;
+    overflow-x: clip;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-wrap px-6;
+  }
+  /* Lien d'évitement : masqué jusqu'au focus clavier */
+  .skip {
+    @apply sr-only;
+  }
+  .skip:focus {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    @apply rounded border-2 border-gold bg-marine font-heading text-sm font-semibold text-white no-underline;
+  }
+  main:focus {
+    outline: none;
+  }
+  /* Eyebrow label. Couleur par défaut calibrée pour fond clair ;
+     sur fond marine, ajouter `text-gold`. */
+  .eyb {
+    @apply font-heading text-xs font-semibold uppercase;
+    color: oklch(var(--primary-on-light));
+    letter-spacing: 0.18em;
+  }
+  /* Anneau de focus visible, uniforme sur tout le site */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:not([tabindex='-1']):focus-visible {
+    outline: 3px solid oklch(var(--primary));
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+  /* Primary button (solid gold) */
+  .btns {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded border-2 border-gold bg-gold font-heading text-[0.8rem] font-semibold uppercase text-marine no-underline transition-all duration-200;
+    letter-spacing: 0.12em;
+    padding: 0.85rem 1.6rem;
+  }
+  /* Survol : or assombri plutôt que fond transparent. L'ancien survol rendait
+     le libellé illisible (2:1) dès que le bouton était posé sur une section blanche. */
+  .btns:hover {
+    @apply border-gold-dark bg-gold-dark text-marine;
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+  }
+  /* Secondary button (outline gold) */
+  .btnp {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded border-2 border-gold-dark bg-transparent font-heading text-[0.8rem] font-semibold uppercase text-gold no-underline transition-all duration-200;
+    letter-spacing: 0.12em;
+    padding: 0.85rem 1.6rem;
+  }
+  .btnp:hover {
+    @apply bg-gold text-marine;
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+  }
+  /* Bouton secondaire pour les sections claires : le `.btnp` doré tombe à 2:1
+     sur du blanc. Contour marine, donc lisible partout. */
+  .btnp-light {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded border-2 border-marine bg-transparent font-heading text-[0.8rem] font-semibold uppercase text-marine no-underline transition-all duration-200;
+    letter-spacing: 0.12em;
+    padding: 0.85rem 1.6rem;
+  }
+  .btnp-light:hover {
+    @apply bg-marine text-white;
+    transform: translateY(-2px);
+  }
+  /* Card with hover lift */
+  .pil {
+    @apply block rounded-lg border border-line bg-white p-8 text-inherit no-underline transition-all duration-200;
+  }
+  .pil:hover {
+    @apply border-gold-dark;
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-4px);
+  }
+  /* Hairline gradient separator */
+  .hair {
+    @apply h-px;
+    background: linear-gradient(to right, transparent, oklch(var(--primary-strong)), transparent);
+  }
+  /* Grille technique BIM */
+  .gridbg {
+    background-image: linear-gradient(oklch(var(--primary) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(var(--primary) / 0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  /* Carte glassmorphic */
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(18px) saturate(140%);
+    border-radius: var(--radius);
+  }
+  /* Nav link. min-h 44px : cible tactile recommandée (WCAG 2.5.5). */
+  .navl {
+    @apply inline-flex min-h-[44px] items-center text-sm font-medium text-white/85 no-underline transition-colors;
+  }
+  .navl:hover,
+  .navl.act {
+    @apply text-gold;
+  }
+  /* Skill tags */
+  .tag-gold {
+    @apply inline-block rounded-sm border px-3 py-1.5 text-xs text-gold;
+    border-color: oklch(var(--primary) / 0.6);
+    letter-spacing: 0.04em;
+  }
+  .tag-white {
+    @apply inline-block rounded-sm border border-white/30 px-3 py-1.5 text-xs text-white/85;
+    letter-spacing: 0.04em;
+  }
+  /* Contenu d'article (rendu MDX) */
+  .prose-etayons {
+    @apply text-[1.0625rem] leading-[1.75] text-muted;
+  }
+  .prose-etayons h2 {
+    @apply mt-10 text-2xl font-semibold text-marine first:mt-0;
+  }
+  .prose-etayons h3 {
+    @apply mt-8 text-xl font-semibold text-marine;
+  }
+  .prose-etayons p {
+    @apply mt-5;
+  }
+  .prose-etayons ul {
+    @apply mt-5 list-disc space-y-2 pl-6;
+  }
+  .prose-etayons ol {
+    @apply mt-5 list-decimal space-y-2 pl-6;
+  }
+  .prose-etayons li::marker {
+    @apply text-gold-dark;
+  }
+  .prose-etayons strong {
+    @apply font-semibold text-marine;
+  }
+  .prose-etayons a {
+    @apply underline;
+    color: oklch(var(--primary-on-light));
+  }
+  .prose-etayons blockquote {
+    @apply mt-6 border-l-[3px] border-gold pl-6 font-heading text-lg font-semibold text-marine;
+  }
+  .prose-etayons hr {
+    @apply mt-10 border-line;
+  }
+  .prose-etayons em {
+    @apply text-sm text-muted;
+  }
+}
