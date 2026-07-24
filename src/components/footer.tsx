@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Image
                 src="/logo-etayons.png"
-                alt="Logo Etayons"
+                alt="Etayons, bureau d'études externalisé à Madagascar"
                 width={50}
                 height={50}
                 className="rounded-full"

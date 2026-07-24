@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { caseStudies } from '@/data/case-studies';
@@ -14,7 +15,6 @@ export default function CaseStudyTabs() {
   const [isHovering, setIsHovering] = useState(false);
   const [userTookControl, setUserTookControl] = useState(false);
   const scope = useRef<HTMLDivElement>(null);
-  const indicatorRef = useRef<HTMLSpanElement>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const isFirstRender = useRef(true);
 
@@ -28,31 +28,19 @@ export default function CaseStudyTabs() {
 
   useGSAP(
     () => {
-      const tab = tabRefs.current[active];
-      if (!tab || !indicatorRef.current) return;
-
+      // Le surlignage de l'onglet actif est géré en CSS (fond + texte changent au
+      // même instant, donc jamais de texte foncé sur fond foncé). GSAP n'anime
+      // plus que la transition du panneau de contenu.
       if (isFirstRender.current) {
         isFirstRender.current = false;
-        gsap.set(indicatorRef.current, { x: tab.offsetLeft, width: tab.offsetWidth });
         return;
       }
-
-      const tweens = [
-        gsap.to(indicatorRef.current, {
-          x: tab.offsetLeft,
-          width: tab.offsetWidth,
-          duration: 0.35,
-          ease: 'power3.out',
-        }),
-        gsap.fromTo(
-          '[data-panel]',
-          { autoAlpha: 0, y: 12 },
-          { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }
-        ),
-      ];
-
-      // Filet de sécurité : jamais de contenu invisible si rAF est suspendu
-      const failSafe = setTimeout(() => tweens.forEach((t) => t.progress(1)), 1000);
+      const tween = gsap.fromTo(
+        '[data-panel]',
+        { autoAlpha: 0, y: 12 },
+        { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+      );
+      const failSafe = setTimeout(() => tween.progress(1), 1000);
       return () => clearTimeout(failSafe);
     },
     { dependencies: [active], scope }
@@ -106,18 +94,15 @@ export default function CaseStudyTabs() {
             aria-controls="uc-panel"
             tabIndex={i === active ? 0 : -1}
             onClick={() => selectTab(i)}
-            className={`relative z-10 flex items-center justify-center whitespace-nowrap rounded px-4 py-2.5 text-center font-heading text-xs font-semibold uppercase tracking-[0.1em] transition-colors lg:whitespace-normal lg:px-2 lg:text-[10px] lg:leading-tight lg:tracking-[0.03em] ${
-              i === active ? 'text-marine' : 'text-white/70 hover:text-gold'
+            className={`relative z-10 flex items-center justify-center whitespace-nowrap rounded px-4 py-2.5 text-center font-heading text-xs font-semibold uppercase tracking-[0.1em] lg:whitespace-normal lg:px-2 lg:text-[10px] lg:leading-tight lg:tracking-[0.03em] ${
+              i === active
+                ? 'bg-gold text-marine'
+                : 'text-white/70 transition-colors hover:text-gold'
             }`}
           >
             {cs.role}
           </button>
         ))}
-        <span
-          ref={indicatorRef}
-          aria-hidden
-          className="absolute left-0 top-1 z-0 h-[calc(100%-8px)] rounded bg-gold"
-        />
       </div>
 
       <div
@@ -129,12 +114,12 @@ export default function CaseStudyTabs() {
         style={{ borderColor: 'oklch(var(--primary-strong) / 0.45)' }}
       >
         <div className="relative min-h-[340px]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={study.image}
-            alt={study.role}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover"
+            alt={study.imageAlt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="object-cover"
           />
           <div
             className="absolute inset-0"

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mentions légales',
+  description:
+    "Mentions légales du site Etayons : éditeur, hébergeur et informations juridiques du bureau d'études externalisé.",
   robots: { index: false },
   alternates: { canonical: 'https://etayons.fr/mentions-legales' },
 };

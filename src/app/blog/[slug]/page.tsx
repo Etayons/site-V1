@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
+import { getAllPostSlugs, getAllPosts, getPostBySlug } from '@/lib/blog';
 
 const BASE_URL = 'https://etayons.fr';
 const OG_IMAGE = `${BASE_URL}/og-image.png`;
@@ -69,6 +69,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) notFound();
 
   const url = `${BASE_URL}/blog/${slug}`;
+
+  // Maillage interne : jusqu'à 3 autres articles, pour croiser les liens et
+  // garder le lecteur (et Google) sur le site.
+  const relatedPosts = getAllPosts()
+    .filter((p) => p.slug !== slug)
+    .slice(0, 3);
 
   // Donnée structurée article : indique à Google le type de contenu, la date,
   // l'auteur et l'éditeur. Condition d'éligibilité aux résultats enrichis.
@@ -196,6 +202,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </Link>
                 </div>
               </footer>
+
+              {relatedPosts.length > 0 && (
+                <aside aria-labelledby="a-lire-aussi" className="mt-14 border-t border-line pt-10">
+                  <h2 id="a-lire-aussi" className="text-xl font-semibold text-marine">
+                    À lire aussi
+                  </h2>
+                  <ul className="m-0 mt-6 grid list-none gap-4 p-0 sm:grid-cols-3">
+                    {relatedPosts.map((related) => (
+                      <li key={related.slug} className="flex">
+                        <Link href={`/blog/${related.slug}`} className="pil flex flex-col !p-5">
+                          <span className="eyb text-[0.62rem]">{related.category}</span>
+                          <span className="mt-2 line-clamp-3 text-sm font-semibold leading-snug text-marine">
+                            {related.title}
+                          </span>
+                          <span className="mt-3 text-sm font-medium text-gold-onlight">
+                            Lire l&apos;article →
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </aside>
+              )}
             </div>
           </div>
         </div>

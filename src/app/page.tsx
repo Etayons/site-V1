@@ -4,9 +4,11 @@ import CaseStudies from '@/components/case-studies';
 import ComparisonTable from '@/components/comparison-table';
 import Hero from '@/components/hero';
 
-// L'accueil hérite du titre et de la description par défaut du layout,
-// mais doit déclarer sa propre URL canonique.
+// Meta description propre à l'accueil (plutôt que celle héritée du layout),
+// pour un signal explicite et unique aux yeux des moteurs.
 export const metadata: Metadata = {
+  description:
+    "Etayons renforce votre bureau d'études avec un relais technique francophone à Madagascar, synchrone avec l'Europe : économie de la construction, structure, VRD, BIM. Opérationnel en 3 semaines.",
   alternates: { canonical: 'https://etayons.fr/' },
 };
 

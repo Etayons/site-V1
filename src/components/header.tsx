@@ -93,7 +93,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3 no-underline">
           <Image
             src="/logo-etayons.png"
-            alt="Logo Etayons"
+            alt="Etayons, bureau d'études externalisé"
             width={72}
             height={72}
             className={`rounded-full transition-all duration-300 ease-out ${

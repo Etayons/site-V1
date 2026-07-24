@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ContactContent from '@/components/contact-content';
 
 export const metadata: Metadata = {
-  title: "Contact · Renfort de bureau d'études",
+  title: "Renfort de bureau d'études en France · Devis et contact",
   description:
-    "Un échange dédié, sans engagement, pour évaluer vos besoins de renfort technique ou déposer votre candidature. Réponse sous 24h ouvrées.",
+    "Besoin de renfort pour votre bureau d'études ? Parlons de votre plan de charge, sans engagement. Devis rapide, réponse sous 24h ouvrées, équipe technique francophone.",
   alternates: { canonical: 'https://etayons.fr/contact' },
 };
 

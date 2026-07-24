@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: "Ressources pour les bureaux d'études : BIM, structure, chiffrage",
   description:
-    "Ressources et éclairages sur l'externalisation technique, le BIM et l'ingénierie structure : le blog Etayons.",
+    "Guides et analyses pour les bureaux d'études : chiffrage, Eurocodes, BIM et structure béton armé. Écrit par des ingénieurs, pour des ingénieurs.",
   alternates: { canonical: 'https://etayons.fr/blog' },
 };
 

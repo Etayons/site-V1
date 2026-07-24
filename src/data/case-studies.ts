@@ -6,6 +6,8 @@ export interface CaseStudy {
   technicalSkills: string[];
   humanSkills: string[];
   image: string;
+  /** Texte alternatif descriptif de la photo (accessibilité + référencement). */
+  imageAlt: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -19,6 +21,8 @@ export const caseStudies: CaseStudy[] = [
     technicalSkills: ['Métrés & DPGF', 'CCTP / pièces écrites', 'Économie de projet ESQ→DCE'],
     humanSkills: ['Précision', 'Dialogue MOA / MOE', 'Tenue des délais'],
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=60',
+    imageAlt:
+      "Économiste de la construction au travail sur le chiffrage d'un programme de logements",
   },
   {
     role: "Chargé d'études Structure (BA)",
@@ -30,6 +34,8 @@ export const caseStudies: CaseStudy[] = [
     technicalSkills: ['Eurocode 2', 'Robot / Arche', 'Coffrage & ferraillage'],
     humanSkills: ['Rigueur', 'Traçabilité des hypothèses', 'Autonomie'],
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=60',
+    imageAlt:
+      "Ingénieur d'études structure béton armé sur les plans de coffrage et de ferraillage d'une résidence",
   },
   {
     role: "Chargé d'études VRD",
@@ -41,6 +47,8 @@ export const caseStudies: CaseStudy[] = [
     technicalSkills: ['Covadis / Mensura', 'AutoCAD', 'Assainissement & nivellement'],
     humanSkills: ['Coordination géomètre / MOE', 'Rigueur réglementaire', 'Sens du terrain'],
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=60',
+    imageAlt:
+      "Chargé d'études VRD sur un projet de voirie, d'assainissement et de réseaux divers",
   },
   {
     role: "Chargé d'études Électricité",
@@ -52,6 +60,8 @@ export const caseStudies: CaseStudy[] = [
     technicalSkills: ['Caneco BT', 'Dialux', 'AutoCAD / Revit MEP'],
     humanSkills: ['Méthode', 'Coordination avec le BE fluides', 'Veille normative'],
     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=60',
+    imageAlt:
+      "Chargé d'études électricité dimensionnant les lots courants forts et faibles d'un bâtiment tertiaire",
   },
   {
     role: 'BIM Modeleur',
@@ -62,6 +72,8 @@ export const caseStudies: CaseStudy[] = [
     technicalSkills: ['Revit', 'Familles paramétriques', 'Navisworks / LOD 400'],
     humanSkills: ["Esprit d'équipe", 'Réactivité aux visas', 'Rigueur de nomenclature'],
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=60',
+    imageAlt:
+      "BIM modeleur travaillant sur la maquette numérique Revit d'un centre logistique",
   },
   {
     role: 'Responsable Études de Prix GO/TCE',
@@ -73,5 +85,7 @@ export const caseStudies: CaseStudy[] = [
     technicalSkills: ['Métrés TCE', 'DPGF / DQE', 'ATTIC+ · Excel'],
     humanSkills: ['Rigueur', 'Réactivité', 'Analyse & synthèse'],
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=60',
+    imageAlt:
+      "Responsable études de prix GO/TCE analysant un dossier d'appel d'offres",
   },
 ];
