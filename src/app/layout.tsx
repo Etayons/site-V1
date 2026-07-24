@@ -73,6 +73,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${poppins.variable} ${inter.variable}`}>
       <head>
+        {/* Bandeau de consentement Mon Petit Cookie (CMP). Chargé avant GTM pour
+            poser l'état de consentement au plus tôt. Intègre nativement Google
+            Consent Mode v2 : il envoie le signal d'acceptation/refus à GTM,
+            qui débloque alors GA4. `beforeInteractive` : chargé avant l'hydratation. */}
+        <Script
+          id="mon-petit-cookie"
+          src="https://mon-petit-cookie.fr/api/widget/019f5231-4f54-7e63-8f46-11a2d107ca22.js"
+          strategy="beforeInteractive"
+        />
         {/* Google Tag Manager. `afterInteractive` : chargé juste après
             l'hydratation, sans bloquer le rendu de la page. */}
         <Script id="gtm-init" strategy="afterInteractive">
