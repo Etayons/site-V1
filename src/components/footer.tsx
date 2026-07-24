@@ -132,11 +132,30 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/50">
-          <span>
-            © {new Date().getFullYear()} Etayons. Tous droits réservés. ·{' '}
+          <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            © {new Date().getFullYear()} Etayons. Tous droits réservés.
+            <span aria-hidden="true">·</span>
             <Link href="/mentions-legales" className="text-white/50 underline">
               Mentions légales
             </Link>
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://mon-petit-cookie.fr/legal/019f5231-4f54-7e63-8f46-11a2d107ca22/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 underline"
+            >
+              Politique de confidentialité
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://mon-petit-cookie.fr/legal/019f5231-4f54-7e63-8f46-11a2d107ca22/cookies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 underline"
+            >
+              Politique de cookies
+            </a>
           </span>
           <span className="uppercase tracking-[0.2em] text-gold/70">
             Ingénierie · Bureaux d&apos;études · Industrie

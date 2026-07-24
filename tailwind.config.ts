@@ -9,6 +9,8 @@ const config: Config = {
         'marine-deep': 'oklch(var(--background-deep) / <alpha-value>)',
         gold: 'oklch(var(--primary) / <alpha-value>)',
         'gold-dark': 'oklch(var(--primary-strong) / <alpha-value>)',
+        // Or assombri pour texte sur fond clair (WCAG AA, 4,78:1)
+        'gold-onlight': 'oklch(var(--primary-on-light) / <alpha-value>)',
         'blue-gray': 'oklch(var(--foreground-on-dark) / <alpha-value>)',
         muted: 'oklch(var(--muted-foreground) / <alpha-value>)',
         line: 'oklch(var(--border-light) / <alpha-value>)',

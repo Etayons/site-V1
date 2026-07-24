@@ -94,7 +94,7 @@ export default function JobContent({ job }: JobContentProps) {
                 <ul className="mt-2 space-y-1.5 text-base leading-7 text-muted">
                   {group.items.map((item) => (
                     <li key={item} className="pl-4 -indent-4">
-                      <span className="mr-2 text-gold-dark">·</span>
+                      <span className="mr-2 text-gold-onlight">·</span>
                       {item}
                     </li>
                   ))}
@@ -117,7 +117,7 @@ export default function JobContent({ job }: JobContentProps) {
               <ul className="mt-2 space-y-1.5 text-base leading-7 text-muted">
                 {job.profil.competencesTechniques.map((item) => (
                   <li key={item} className="pl-4 -indent-4">
-                    <span className="mr-2 text-gold-dark">·</span>
+                    <span className="mr-2 text-gold-onlight">·</span>
                     {item}
                   </li>
                 ))}
@@ -128,7 +128,7 @@ export default function JobContent({ job }: JobContentProps) {
               <ul className="mt-2 space-y-1.5 text-base leading-7 text-muted">
                 {job.profil.qualitesPersonnelles.map((item) => (
                   <li key={item} className="pl-4 -indent-4">
-                    <span className="mr-2 text-gold-dark">·</span>
+                    <span className="mr-2 text-gold-onlight">·</span>
                     {item}
                   </li>
                 ))}
@@ -144,7 +144,7 @@ export default function JobContent({ job }: JobContentProps) {
             <ul className="mt-4 space-y-1.5 text-base leading-7 text-muted">
               {job.conditions.map((item) => (
                 <li key={item} className="pl-4 -indent-4">
-                  <span className="mr-2 text-gold-dark">·</span>
+                  <span className="mr-2 text-gold-onlight">·</span>
                   {item}
                 </li>
               ))}
@@ -170,11 +170,11 @@ export default function JobContent({ job }: JobContentProps) {
               .filter((j) => j.slug !== job.slug)
               .map((other) => (
                 <Link key={other.slug} href={`/carriere/${other.slug}`} data-reveal className="pil">
-                  <div className="text-xs uppercase tracking-[0.14em] text-gold-dark">
+                  <div className="text-xs uppercase tracking-[0.14em] text-gold-onlight">
                     {other.level}
                   </div>
                   <h3 className="mt-2 text-lg font-semibold text-marine">{other.title}</h3>
-                  <div className="mt-4 text-sm font-medium text-gold-dark">Voir la fiche →</div>
+                  <div className="mt-4 text-sm font-medium text-gold-onlight">Voir la fiche →</div>
                 </Link>
               ))}
           </div>

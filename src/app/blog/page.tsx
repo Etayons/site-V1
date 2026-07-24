@@ -80,7 +80,7 @@ export default function BlogPage() {
                         <time dateTime={post.date}>{formatDate(post.date)}</time>
                         <span>{post.readingTime}</span>
                       </footer>
-                      <span aria-hidden="true" className="mt-2 text-sm font-medium text-gold-dark">
+                      <span aria-hidden="true" className="mt-2 text-sm font-medium text-gold-onlight">
                         Lire l&apos;article →
                       </span>
                     </Link>

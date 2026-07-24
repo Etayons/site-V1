@@ -54,10 +54,7 @@ export default function HomePage() {
           <div className="mt-16 grid gap-5 md:grid-cols-3">
             {pillars.map((pillar) => (
               <article key={pillar.number} className="pil">
-                <div
-                  className="font-heading text-6xl font-bold"
-                  style={{ color: 'color-mix(in oklab, oklch(0.78 0.14 78) 60%, white)' }}
-                >
+                <div className="font-heading text-6xl font-bold text-gold-onlight">
                   {pillar.number}
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-marine">{pillar.title}</h3>
@@ -97,7 +94,7 @@ export default function HomePage() {
               Un partenariat bâti sur la transparence, l&apos;éthique et un cadre contractuel B2B
               flexible.
             </p>
-            <div className="mt-8 font-medium text-gold-dark">Découvrir notre méthodologie →</div>
+            <div className="mt-8 font-medium text-gold-onlight">Découvrir notre méthodologie →</div>
           </Link>
           <Link href="/carriere" className="pil relative overflow-hidden bg-marine p-12 text-white">
             <div

@@ -262,7 +262,7 @@ export default function AboutContent() {
               </article>
             ))}
           </div>
-          <div className="mt-10 flex items-center gap-3 text-xs uppercase tracking-[0.24em] text-gold-dark">
+          <div className="mt-10 flex items-center gap-3 text-xs uppercase tracking-[0.24em] text-gold-onlight">
             <span className="h-px w-8 bg-gold-dark" />
             Cycle d&apos;amélioration continue
             <span className="h-px flex-1 bg-line" />
