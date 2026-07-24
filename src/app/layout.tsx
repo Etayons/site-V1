@@ -46,27 +46,61 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
   },
   icons: { icon: '/logo-etayons.png' },
+  // Validation de propriété Google Search Console (méthode balise HTML).
+  verification: { google: '0NgwNnTNzwgetfKjzdlXiY2xRYKGDF-Cor9P9-vpbKw' },
 };
 
+// Entité Organisation. Le `@id` sert d'ancre pour que les autres schémas
+// (WebSite, articles) pointent vers la même entité. Objectif référencement :
+// aider Google à distinguer la marque « Etayons » du verbe « étayer ».
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://etayons.fr/#organization',
   name: 'Etayons',
+  legalName: 'Etayons',
   url: 'https://etayons.fr/',
   logo: 'https://etayons.fr/logo-etayons.png',
+  image: 'https://etayons.fr/og-image.png',
+  slogan: 'Nous étayons vos équipes techniques',
   description:
     "Externalisation de bureau d'études : relais de compétences techniques francophones à Madagascar, synchrone avec l'Europe.",
   email: 'contact@etayons.fr',
+  telephone: '+33609995388',
+  knowsLanguage: ['fr'],
+  areaServed: ['France', 'Europe francophone'],
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'ITO 20 Bis B, Ambodifasika, Itaosy',
     addressLocality: 'Antananarivo',
     addressCountry: 'MG',
   },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: 'contact@etayons.fr',
+    telephone: '+33609995388',
+    availableLanguage: ['French'],
+    areaServed: 'FR',
+  },
   sameAs: [
     'https://www.linkedin.com/company/etayons/',
     'https://www.facebook.com/profile.php?id=61591479466263',
   ],
+};
+
+// Entité Site web, rattachée à l'Organisation. Renforce l'association entre le
+// domaine et la marque « Etayons » aux yeux de Google.
+const webSiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://etayons.fr/#website',
+  url: 'https://etayons.fr/',
+  name: 'Etayons',
+  description:
+    "Bureau d'études externalisé : relais techniques francophones à Madagascar, synchrone avec l'Europe.",
+  inLanguage: 'fr-FR',
+  publisher: { '@id': 'https://etayons.fr/#organization' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -106,6 +140,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
         <a href="#contenu" className="skip">
           Aller au contenu principal
