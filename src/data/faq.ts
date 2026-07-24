@@ -5,6 +5,11 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
+    question: "Qu'est-ce qu'Etayons ?",
+    answer:
+      "Etayons est une entreprise franco-malgache de sous-traitance de bureau d'études pour les entreprises françaises. Nous mettons à disposition des ingénieurs et projeteurs francophones dédiés — structure béton armé, VRD, BIM, études de prix — pour renforcer votre capacité de production sans recruter, avec un démarrage en 3 semaines.",
+  },
+  {
     question: 'Quel type de contrat proposez-vous et avec quelle souplesse ?',
     answer:
       "Un contrat de prestation B2B modulable : le volume d'intervention suit votre plan de charge, à la hausse comme à la baisse, sans engagement structurel ni embauche de votre côté.",

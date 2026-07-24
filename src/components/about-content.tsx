@@ -126,9 +126,11 @@ export default function AboutContent() {
               L&apos;extension naturelle de{' '}
               <span className="text-gold">votre bureau d&apos;études.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-blue-gray">
-              Nous bâtissons des passerelles techniques durables entre la France et Madagascar, sur
-              un socle d&apos;éthique et de rigueur.
+            <p className="mt-6 max-w-2xl text-lg text-blue-gray">
+              <strong className="font-semibold text-white">Etayons est une entreprise
+              franco-malgache de sous-traitance de bureau d&apos;études</strong> pour les
+              entreprises françaises. Nous bâtissons des passerelles techniques durables entre la
+              France et Madagascar, sur un socle d&apos;éthique et de rigueur.
             </p>
           </div>
           <div className="hair absolute bottom-0 left-0 right-0" />

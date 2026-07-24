@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
+import { pageOpenGraph } from '@/lib/metadata';
 
 export const metadata: Metadata = {
   title: "Ressources pour les bureaux d'études : BIM, structure, chiffrage",
   description:
     "Guides et analyses pour les bureaux d'études : chiffrage, Eurocodes, BIM et structure béton armé. Écrit par des ingénieurs, pour des ingénieurs.",
   alternates: { canonical: 'https://etayons.fr/blog' },
+  openGraph: pageOpenGraph('/blog'),
 };
 
 function formatDate(iso: string): string {

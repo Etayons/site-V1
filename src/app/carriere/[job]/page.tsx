@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getJob, jobs } from '@/data/jobs';
 import JobContent from '@/components/job-content';
+import { pageOpenGraph } from '@/lib/metadata';
 
 interface JobPageProps {
   params: Promise<{ job: string }>;
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: JobPageProps): Promise<Metada
     title: `${job.title} · Fiche de poste`,
     description: `Rejoignez Etayons à Antananarivo comme ${job.title}. ${job.tags.join(' · ')}. CDI, statut cadre, projets européens.`,
     alternates: { canonical: `https://etayons.fr/carriere/${job.slug}` },
+    openGraph: pageOpenGraph(`/carriere/${job.slug}`),
   };
 }
 
