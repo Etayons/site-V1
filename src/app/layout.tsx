@@ -64,13 +64,13 @@ const organizationJsonLd = {
   image: 'https://etayons.fr/og-image.png',
   slogan: 'Nous étayons vos équipes techniques',
   description:
-    "Etayons est une entreprise franco-malgache de sous-traitance de bureau d'études pour les entreprises françaises : structure béton armé, VRD, BIM et études de prix, avec des ingénieurs francophones synchrones avec l'Europe.",
+    "Etayons est une entreprise franco-malgache qui étaye les équipes techniques du BTP et des bureaux d'études avec des experts francophones dédiés, basés à Madagascar : structure béton armé, VRD, BIM et études de prix.",
   // Désambiguïsation : « Etayons » est aussi une forme du verbe « étayer ». Ce champ
   // aide Google et son IA à distinguer l'entreprise du mot du dictionnaire.
   disambiguatingDescription:
-    "Entreprise de sous-traitance de bureau d'études (à distinguer du verbe « étayer »).",
+    "Entreprise franco-malgache d'experts techniques pour le BTP et les bureaux d'études (à distinguer du verbe « étayer »).",
   knowsAbout: [
-    "sous-traitance de bureau d'études",
+    "renfort technique des bureaux d'études",
     'calcul de structure béton armé',
     'VRD',
     'BIM',
@@ -110,7 +110,7 @@ const webSiteJsonLd = {
   url: 'https://etayons.fr/',
   name: 'Etayons',
   description:
-    "Bureau d'études externalisé : relais techniques francophones à Madagascar, synchrone avec l'Europe.",
+    "Experts techniques francophones basés à Madagascar, dédiés aux équipes du BTP et des bureaux d'études.",
   inLanguage: 'fr-FR',
   publisher: { '@id': 'https://etayons.fr/#organization' },
 };
