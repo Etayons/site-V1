@@ -117,7 +117,7 @@ export default function AboutContent() {
 
   return (
     <>
-      {/* 1. Hero — BLUE MARINE (fusionne avec le Header) */}
+      {/* 1. Hero : BLUE MARINE (fusionne avec le Header) */}
       <div ref={heroRef}>
         <section className="gridbg relative flex min-h-[475px] flex-col justify-start bg-marine pb-16 pt-32 text-white">
           <div className="wrap">
@@ -138,7 +138,7 @@ export default function AboutContent() {
         </section>
       </div>
 
-      {/* 2. Notre vision + stats — WHITE */}
+      {/* 2. Notre vision + stats : WHITE */}
       <section className="bg-white py-24">
         <div ref={visionRef} className="wrap">
           <div className="eyb">Notre vision</div>
@@ -181,7 +181,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* 3. Pourquoi Madagascar — BLUE MARINE */}
+      {/* 3. Pourquoi Madagascar : BLUE MARINE */}
       <section className="bg-marine py-24">
         <div ref={tableRef} className="wrap">
           <div className="eyb text-gold">Pourquoi Madagascar</div>
@@ -236,7 +236,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* 4. Amélioration continue — WHITE */}
+      {/* 4. Amélioration continue : WHITE */}
       <section className="bg-white py-24">
         <div ref={stepsRef} className="wrap">
           <div className="eyb">Amélioration continue</div>
@@ -273,7 +273,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* 5. Gouvernance & engagements — BLUE MARINE */}
+      {/* 5. Gouvernance & engagements : BLUE MARINE */}
       <section className="bg-marine py-24">
         <div ref={governanceRef} className="wrap">
           <div className="grid items-end gap-10 lg:grid-cols-[1.4fr_1fr]">
@@ -306,7 +306,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* 6. FAQ — WHITE */}
+      {/* 6. FAQ : WHITE */}
       <section className="bg-white py-24">
         <div ref={faqRef} className="wrap max-w-3xl">
           <div className="eyb">Foire aux questions</div>
@@ -321,7 +321,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* 7. CTA — WHITE, juste avant le Footer marine */}
+      {/* 7. CTA : WHITE, juste avant le Footer marine */}
       <section className="border-t border-line bg-white py-20 text-center">
         <div ref={ctaRef} className="wrap">
           <div data-reveal className="eyb">
