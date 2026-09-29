@@ -23,7 +23,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://etayons.fr'),
   title: {
-    default: "Bureau d'études externalisé à Madagascar | Etayons",
+    default: "Renfort technique pour bureaux d'études et BTP à Madagascar",
     template: '%s | Etayons',
   },
   description:
