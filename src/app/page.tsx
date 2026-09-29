@@ -8,7 +8,7 @@ import Hero from '@/components/hero';
 // pour un signal explicite et unique aux yeux des moteurs.
 export const metadata: Metadata = {
   description:
-    "Etayons renforce votre bureau d'études avec un relais technique francophone à Madagascar, synchrone avec l'Europe : économie de la construction, structure, VRD, BIM. Opérationnel en 3 semaines.",
+    "Renforcez votre bureau d'études sans recruter : un expert technique francophone dédié, intégré à votre équipe et à vos outils. Essai de 3 mois, sans engagement.",
   alternates: { canonical: 'https://etayons.fr/' },
 };
 
