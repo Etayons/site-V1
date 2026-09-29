@@ -13,7 +13,7 @@ const DURATION_S = 0.5;
  */
 interface ScrollRevealOptions {
   stagger?: number;
-  /** false pour les conteneurs avec descendants `position: sticky` — un
+  /** false pour les conteneurs avec descendants `position: sticky` : un
    *  transform GSAP (même y:0) sur un ancêtre casse le sticky. */
   slide?: boolean;
 }
