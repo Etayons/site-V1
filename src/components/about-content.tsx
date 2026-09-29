@@ -128,9 +128,10 @@ export default function AboutContent() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-blue-gray">
               <strong className="font-semibold text-white">Etayons est une entreprise
-              franco-malgache de sous-traitance de bureau d&apos;études</strong> pour les
-              entreprises françaises. Nous bâtissons des passerelles techniques durables entre la
-              France et Madagascar, sur un socle d&apos;éthique et de rigueur.
+              franco-malgache</strong> qui étaye les équipes techniques du BTP et des bureaux
+              d&apos;études avec des experts francophones dédiés, basés à Madagascar. Un modèle
+              juste des deux côtés : vos études restent sous votre maîtrise, nos ingénieurs sont
+              rémunérés dans le haut du marché, formés en continu et accompagnés dans leur carrière.
             </p>
           </div>
           <div className="hair absolute bottom-0 left-0 right-0" />
