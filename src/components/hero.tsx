@@ -67,7 +67,7 @@ export default function Hero() {
       <div className="wrap relative grid w-full items-center gap-12 py-16 lg:grid-cols-[1.8fr_1fr]">
         <div>
           <div data-hero="reveal" className="glass inline-block px-4 py-2">
-            <span className="eyb text-gold">Ingénierie · Bureau d&apos;études externalisé</span>
+            <span className="eyb text-gold">BTP · Bureaux d&apos;études</span>
           </div>
           <h1
             data-hero="reveal"
@@ -78,9 +78,9 @@ export default function Hero() {
             vos <span className="text-gold">équipes techniques.</span>
           </h1>
           <p data-hero="reveal" className="mt-8 max-w-xl text-lg leading-7 text-blue-gray">
-            Renforcez votre capacité de production et sécurisez vos projets industriels, sans
-            alourdir votre structure. Un relais de compétences hautement qualifié à Madagascar,
-            synchrone avec votre bureau d&apos;études.
+            Renforcez votre capacité de production, sans alourdir votre structure. Des experts
+            techniques francophones, basés à Madagascar, dédiés à votre équipe et synchrones avec
+            votre bureau d&apos;études.
           </p>
           <div data-hero="reveal" className="mt-10 flex flex-wrap gap-4">
             <Link href="/contact" className="btns">
