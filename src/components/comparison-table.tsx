@@ -21,7 +21,7 @@ const rows: ComparisonRow[] = [
     criterion: 'Tarification unitaire moyenne',
     salarie: '~5 200 € / mois (chargé)',
     freelance: '350 € à 550 € / jour',
-    etayons: '1 500 € à 2 500 € / mois',
+    etayons: '700 € à 2 500 € / mois',
   },
   {
     criterion: "Coût d'acquisition du profil",
