@@ -2,6 +2,7 @@
 
 import { Suspense, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { getService } from '@/data/services';
 
 type Mode = 'entreprise' | 'candidat';
 type Status = 'idle' | 'sending' | 'sent' | 'error';
@@ -24,6 +25,8 @@ const labels: Record<Mode, { name: string; second: string; fourth: string; messa
 function ContactFormInner() {
   const searchParams = useSearchParams();
   const initialMode: Mode = searchParams.get('mode') === 'candidat' ? 'candidat' : 'entreprise';
+  // Prestation d'origine (?service=bim-revit), transmise à l'email et au tracking.
+  const service = getService(searchParams.get('service') ?? '');
   const [mode, setMode] = useState<Mode>(initialMode);
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -33,7 +36,7 @@ function ContactFormInner() {
     email: '',
     phoneOrSpecialty: '',
     cvLink: '',
-    message: '',
+    message: service ? `Besoin : ${service.formValue}. ` : '',
   });
 
   const label = labels[mode];
@@ -55,7 +58,12 @@ function ContactFormInner() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode, ...fields, message: fields.message || 'Non renseigné' }),
+        body: JSON.stringify({
+          mode,
+          ...fields,
+          service: service?.formValue ?? '',
+          message: fields.message || 'Non renseigné',
+        }),
       });
       const json: { success?: boolean; error?: string } = await res.json();
       if (!res.ok || !json.success) {
@@ -68,6 +76,7 @@ function ContactFormInner() {
       w.dataLayer.push({
         event: mode === 'entreprise' ? 'generate_lead' : 'application_submit',
         form_type: mode,
+        service_interest: service?.slug ?? 'non_precise',
       });
       setStatus('sent');
       window.scrollTo({ top: 0, behavior: 'smooth' });

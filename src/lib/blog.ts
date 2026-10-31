@@ -12,6 +12,14 @@ export interface BlogPostMeta {
   author: string;
   category: string;
   readingTime: string;
+  /** Titre court pour Google (balise <title>) ; le H1 garde `title`. */
+  seoTitle: string;
+  /** Prestation liée (slug de services.ts), pour le CTA de fin d'article. */
+  service: string;
+  /** Articles recommandés, par slug, dans l'ordre d'affichage. */
+  related: string[];
+  /** Date de dernière révision réelle du contenu (ISO), sinon `date`. */
+  updated: string;
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -22,6 +30,18 @@ function readPostFile(slug: string): { data: Record<string, string>; content: st
   const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
   const raw = fs.readFileSync(filePath, 'utf-8');
   return matter(raw);
+}
+
+function extraFields(slug: string, data: Record<string, string>) {
+  return {
+    seoTitle: data['seoTitle'] ?? data['title'] ?? slug,
+    service: data['service'] ?? '',
+    related: (data['related'] ?? '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean),
+    updated: data['updated'] ?? data['date'] ?? '',
+  };
 }
 
 export function getAllPostSlugs(): string[] {
@@ -43,6 +63,7 @@ export function getAllPosts(): BlogPostMeta[] {
         author: data['author'] ?? 'Équipe Etayons',
         category: data['category'] ?? '',
         readingTime: data['readingTime'] ?? '',
+        ...extraFields(slug, data),
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -59,6 +80,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       author: data['author'] ?? 'Équipe Etayons',
       category: data['category'] ?? '',
       readingTime: data['readingTime'] ?? '',
+      ...extraFields(slug, data),
       content,
     };
   } catch {

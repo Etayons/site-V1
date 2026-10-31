@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { jobs } from '@/data/jobs';
+import { services } from '@/data/services';
 
 const guarantees = ['Essai de 3 mois', 'Remplacement sous 30 jours', 'NDA systématique'];
 
@@ -66,7 +67,7 @@ export default function Footer() {
           </aside>
         </div>
 
-        <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <nav aria-labelledby="footer-nav">
             <h2 id="footer-nav" className="eyb text-white/50">
               Navigation
@@ -79,9 +80,23 @@ export default function Footer() {
               <li><Link href="/contact" className="navl text-white/70">Contact</Link></li>
             </ul>
           </nav>
+          <nav aria-labelledby="footer-prestations">
+            <h2 id="footer-prestations" className="eyb text-white/50">
+              Nos prestations
+            </h2>
+            <ul className="m-0 mt-2 flex list-none flex-col p-0 text-sm">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/services/${s.slug}`} className="navl text-white/70">
+                    {s.menuLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <nav aria-labelledby="footer-metiers">
             <h2 id="footer-metiers" className="eyb text-white/50">
-              Nos métiers
+              Nous recrutons
             </h2>
             <ul className="m-0 mt-2 flex list-none flex-col p-0 text-sm">
               {jobs.map((job) => (

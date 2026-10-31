@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/', label: 'Accueil' },
+  { href: '/services', label: 'Prestations' },
   { href: '/a-propos', label: 'À propos' },
   { href: '/carriere', label: 'Carrière' },
   { href: '/blog', label: 'Blog' },
@@ -115,7 +116,8 @@ export default function Header() {
         <nav aria-label="Navigation principale" className="hidden lg:block">
           <ul className="m-0 flex list-none items-center gap-9 p-0">
             {navLinks.map((link) => {
-              const isCurrent = pathname === link.href;
+              const isCurrent =
+                link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
               return (
                 <li key={link.href}>
                   <Link
@@ -158,7 +160,8 @@ export default function Header() {
         <nav aria-label="Navigation principale mobile" className="wrap py-4">
           <ul className="m-0 flex list-none flex-col p-0">
             {navLinks.map((link) => {
-              const isCurrent = pathname === link.href;
+              const isCurrent =
+                link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
               return (
                 <li key={link.href} className="border-b border-white/10 last:border-b-0">
                   <Link
