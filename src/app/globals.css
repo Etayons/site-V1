@@ -100,7 +100,6 @@
      le libellé illisible (2:1) dès que le bouton était posé sur une section blanche. */
   .btns:hover {
     @apply border-gold-dark bg-gold-dark text-marine;
-    box-shadow: var(--shadow-gold);
     transform: translateY(-2px);
   }
   /* Secondary button (outline gold) */
@@ -111,7 +110,6 @@
   }
   .btnp:hover {
     @apply bg-gold text-marine;
-    box-shadow: var(--shadow-gold);
     transform: translateY(-2px);
   }
   /* Bouton secondaire pour les sections claires : le `.btnp` doré tombe à 2:1
@@ -131,7 +129,6 @@
   }
   .pil:hover {
     @apply border-gold-dark;
-    box-shadow: var(--shadow-gold);
     transform: translateY(-4px);
   }
   /* Hairline gradient separator */

@@ -37,7 +37,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Sous quel délai le Relais est-il opérationnel ?',
     answer:
-      'Environ 4 semaines au total : 3 semaines pour identifier et qualifier les candidats, puis 1 semaine pour vos entretiens de validation avant le premier jour de mission.',
+      'Environ 3 semaines, de la fiche de mission au premier jour travaillé : identification et qualification des candidats, puis vos entretiens de validation.',
   },
   {
     question: 'Quelles garanties de sécurité et de confidentialité offrez-vous ?',
