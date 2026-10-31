@@ -8,7 +8,7 @@ import Hero from '@/components/hero';
 // pour un signal explicite et unique aux yeux des moteurs.
 export const metadata: Metadata = {
   description:
-    "Renforcez votre bureau d'études sans recruter : un expert technique francophone dédié, intégré à votre équipe et à vos outils. Essai de 3 mois, sans engagement.",
+    "Renforcez votre bureau d'études sans recruter : un expert technique francophone dédié, intégré à votre équipe et à vos outils. Période test de 3 mois, remplacement sous 30 jours.",
   alternates: { canonical: 'https://etayons.fr/' },
 };
 

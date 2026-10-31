@@ -61,6 +61,14 @@ function ContactFormInner() {
       if (!res.ok || !json.success) {
         throw new Error(json.error ?? "L'envoi a échoué.");
       }
+      // Mesure : événement poussé uniquement après une réponse OK de /api/contact.
+      // Aucune donnée personnelle n'est envoyée à Analytics.
+      const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+      w.dataLayer = w.dataLayer ?? [];
+      w.dataLayer.push({
+        event: mode === 'entreprise' ? 'generate_lead' : 'application_submit',
+        form_type: mode,
+      });
       setStatus('sent');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {

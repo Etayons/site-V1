@@ -18,8 +18,8 @@ const keyFigures = [
   },
   {
     value: '3 mois',
-    label: "Période d'essai",
-    detail: "Profil remplacé sous 30 jours, sans frais, s'il ne convient pas.",
+    label: 'Période test',
+    detail: "Profil remplacé sous 30 jours s'il ne convient pas.",
   },
   {
     value: '100%',
@@ -60,7 +60,7 @@ const governanceItems = [
   },
   {
     title: 'Vous restez libres',
-    text: "Période d'essai de 3 mois, remplacement sous 30 jours sans frais, aucun engagement sur les profils présentés. La relation dure parce qu'elle performe, pas parce qu'un contrat vous enferme.",
+    text: "Période test de 3 mois et remplacement sous 30 jours si le profil ne convient pas. Aucun profil présenté ne vous engage avant signature ; chaque Relais fait ensuite l'objet d'un engagement de 6 mois.",
   },
   {
     title: 'Rémunération juste, impact réel',

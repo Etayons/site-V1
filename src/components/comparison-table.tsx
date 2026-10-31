@@ -21,31 +21,31 @@ const rows: ComparisonRow[] = [
     criterion: 'Tarification unitaire moyenne',
     salarie: '~5 200 € / mois (chargé)',
     freelance: '350 € à 550 € / jour',
-    etayons: '700 € à 2 500 € / mois',
+    etayons: 'À partir de 700 € / mois selon profil',
   },
   {
     criterion: "Coût d'acquisition du profil",
     salarie: '~8 000 € en moyenne',
     freelance: '0 € (frais intermédiaires exclus)',
-    etayons: "0 € (inclus dans l'offre)",
+    etayons: '0 € (frais de gestion : 490 € / an)',
   },
   {
     criterion: 'Équipement et licences DAO',
     salarie: "À la charge de l'employeur",
     freelance: 'Inclus dans le TJM',
-    etayons: 'Entièrement inclus',
+    etayons: 'Poste bureautique inclus ; licences métier fournies par vos soins',
   },
   {
     criterion: 'Garantie de continuité de service',
     salarie: 'Non (congés, maladie)',
     freelance: 'Non (rupture unilatérale possible)',
-    etayons: 'Oui (remplacement immédiat géré)',
+    etayons: 'Oui (remplacement sous 30 jours)',
   },
   {
     criterion: 'Engagement et flexibilité',
     salarie: 'Rigide (droit du travail)',
     freelance: 'Souple (selon bon de commande)',
-    etayons: 'Totale (contrat cadre, sans engagement de durée)',
+    etayons: 'Contrat cadre, engagement de 6 mois par Relais',
   },
 ];
 
