@@ -47,7 +47,7 @@ export default function BlogPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
       />
-      <section className="gridbg relative flex min-h-[475px] flex-col justify-start bg-marine pb-16 pt-32 text-white">
+      <section className="gridbg relative flex flex-col justify-start bg-marine pb-12 pt-28 text-white sm:pt-32">
         <div className="wrap">
           <div className="eyb text-gold">Ressources</div>
           <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">

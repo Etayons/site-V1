@@ -12,7 +12,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Quel type de contrat proposez-vous et avec quelle souplesse ?',
     answer:
-      "Un contrat de prestation B2B modulable : le volume d'intervention suit votre plan de charge, à la hausse comme à la baisse, sans engagement structurel ni embauche de votre côté.",
+      "Un contrat-cadre B2B, complété par un accord d'application par Relais. Chaque Relais fait l'objet d'un engagement de 6 mois, renouvelable, avec une période test de 3 mois. Vous ajoutez des Relais au rythme de votre plan de charge, sans embauche de votre côté.",
   },
   {
     question: "Comment se passe le pilotage d'une équipe à distance ?",
@@ -27,7 +27,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Que se passe-t-il si le profil retenu ne convient pas ?',
     answer:
-      "Vous restez libre à chaque étape : aucun profil présenté ne vous engage. Et si, au cours des trois premiers mois de collaboration, le Relais intégré ne répond pas à vos attentes, nous organisons son remplacement sans facturation supplémentaire.",
+      "Vous restez libre à chaque étape : aucun profil présenté ne vous engage. Et si, au cours des trois premiers mois de collaboration, le Relais intégré ne répond pas à vos attentes, nous organisons son remplacement sous 30 jours.",
   },
   {
     question: 'D\'où viennent vos talents ?',
@@ -37,7 +37,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Sous quel délai le Relais est-il opérationnel ?',
     answer:
-      'Environ 4 semaines au total : 3 semaines pour identifier et qualifier les candidats, puis 1 semaine pour vos entretiens de validation avant le premier jour de mission.',
+      'Environ 3 semaines, de la fiche de mission au premier jour travaillé : identification et qualification des candidats, puis vos entretiens de validation.',
   },
   {
     question: 'Quelles garanties de sécurité et de confidentialité offrez-vous ?',

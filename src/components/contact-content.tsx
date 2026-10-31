@@ -100,11 +100,13 @@ export default function ContactContent() {
                 <a href="mailto:contact@etayons.fr" className="block font-medium text-gold-dark no-underline">
                   contact@etayons.fr
                 </a>
-                <p>+33 6 09 99 53 88</p>
+                <a href="tel:+33609995388" className="block font-medium text-gold-dark no-underline">
+                  +33 6 09 99 53 88
+                </a>
                 <p>Réponse sous 24h ouvrées.</p>
               </InfoRow>
               <InfoRow icon={<ShieldIcon />} title="Cadre">
-                <p>Contrats B2B flexibles</p>
+                <p>Contrat-cadre B2B</p>
                 <p>NDA systématique</p>
                 <p>Confidentialité industrielle</p>
               </InfoRow>

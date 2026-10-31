@@ -1,36 +1,52 @@
 ---
-title: "BIM niveau 2, conventions et licences : ce qu'il faut vraiment maîtriser en 2026"
-excerpt: "Cahier des charges BIM, convention BIM, plan d'exécution : trois documents, un seul objectif. Et une suite logicielle qui coûte cher si elle tourne à moitié vide."
+title: "Convention BIM, IFC et licences : les points à vérifier avant de lancer une maquette en 2026"
+seoTitle: "Convention BIM et licences : points à vérifier en 2026"
+excerpt: "Cahier des charges BIM, convention BIM, plan d'exécution : trois documents qui ne jouent pas le même rôle. Et une maquette IFC qui ne vaut que par la rigueur de son classement."
 date: "2026-07-10"
+updated: "2026-10-31"
 author: "Équipe Etayons"
 category: "BIM & modélisation"
 readingTime: "6 min"
+service: "bim-revit"
+related: "rgpd-confidentialite-relais-dedie, penurie-dessinateurs-projeteurs-cout-recrutement, externalisation-idees-recues"
 ---
 
-Le BIM niveau 2 n'est plus une option sur les projets tertiaires, hospitaliers ou d'infrastructure. Sur les marchés publics au-dessus de 10 millions d'euros, c'est devenu le standard attendu par défaut.
+Sur un projet en BIM, la plupart des pertes de temps ne viennent pas du logiciel. Elles viennent d'un document mal compris, d'un objet mal classé dans la maquette ou d'une licence achetée pour un poste qui reste vide. Voici les points à vérifier avant de lancer la production.
 
-La norme ISO 19650 distingue quatre niveaux de maturité. Le niveau 0 se limite à des plans 2D isolés, format DWG, sans réelle collaboration numérique. Le niveau 1 ajoute des modèles 3D, mais chaque discipline travaille encore de son côté, avec des échanges de fichiers asynchrones. Le niveau 2 change la logique : un modèle 3D fédéré, un environnement de données commun, un format d'échange ouvert : l'IFC. Le niveau 3, réservé aux projets les plus stratégiques, ajoute la planification temporelle et le suivi des coûts en continu.
+La norme ISO 19650 sert de cadre de référence pour la gestion de l'information tout au long d'un projet de construction. Elle prolonge la démarche britannique longtemps appelée « BIM niveau 2 » : un modèle fédéré, un environnement commun de données et des échanges en format ouvert.
 
-## Trois documents, trois responsables, un seul projet
+## Trois documents, trois rôles
 
-Un projet BIM niveau 2 s'organise autour de trois pièces contractuelles distinctes, et confondre leur rôle coûte du temps en phase d'exécution.
+Un projet en BIM s'organise généralement autour de trois pièces. Les confondre coûte du temps en phase d'exécution.
 
-Le maître d'ouvrage rédige le cahier des charges BIM : il fixe les exigences de données attendues et les jalons de livraison. Le BIM Manager rédige ensuite la convention BIM, qui encadre les responsabilités de chaque intervenant, les formats d'échange retenus et les règles de nommage des objets dans la maquette. Chaque entreprise qui répond à l'appel d'offres produit enfin son propre plan d'exécution BIM, où elle détaille sa méthode et les compétences de son équipe. Ce document pèse à lui seul 15 à 25 % de la note d'attribution du marché, un point souvent sous-estimé par les bureaux d'études qui bâclent cette pièce pour se concentrer sur le chiffrage.
+- **Le cahier des charges BIM**, rédigé par le maître d'ouvrage : les exigences d'information et les jalons de livraison.
+- **La convention BIM**, rédigée par le BIM Manager du projet : responsabilités de chaque intervenant, formats d'échange, règles de nommage, niveaux de développement (LOD) attendus par phase.
+- **Le plan d'exécution BIM**, produit par chaque intervenant : sa méthode, son organisation et les compétences de son équipe.
+
+Le nom et le contenu exact de ces documents varient selon le maître d'ouvrage et le cadre de la mission. La première étape reste de vérifier lequel s'impose à vous, et ce qu'il exige.
+
+## Ce que la convention doit trancher avant la première modélisation
+
+Avant de modéliser le premier mur, vérifiez que la convention répond clairement à ces questions :
+
+- Quel système de coordonnées et quel point de base partagés par toutes les maquettes ?
+- Quelles règles de nommage pour les fichiers, les vues et les objets ?
+- Quel LOD est attendu à chaque phase, et pour quels lots ?
+- Quelle version d'IFC pour les échanges, et avec quels paramètres d'export ?
+- Quelle fréquence de dépôt dans l'environnement commun, et qui fait la synthèse ?
 
 ## L'IFC ne pardonne pas l'approximation
 
-Le format IFC 2x3 permet à des logiciels différents de lire la même maquette sans perte d'information. Encore faut-il que chaque objet soit correctement classé.
+Le format IFC permet à des logiciels différents de lire la même maquette. Encore faut-il que chaque objet soit correctement classé.
 
-Trop de maquettes abusent de la classe générique IfcBuildingElementProxy par facilité, au lieu de déclarer une poutre sous IfcBeam avec son type associé IfcBeamType. Résultat : les quantitatifs automatiques se faussent, les calculs de structure extraits de la maquette perdent en fiabilité, et la synthèse inter-lots tourne au bricolage.
+Trop de maquettes abusent de la classe générique IfcBuildingElementProxy par facilité, au lieu de déclarer une poutre sous IfcBeam avec son type associé. Résultat : les quantitatifs automatiques se faussent, les extractions pour le calcul perdent en fiabilité, et la synthèse inter-lots tourne au bricolage. Un contrôle simple avant chaque dépôt consiste à filtrer la maquette exportée sur cette classe générique : chaque objet qui y figure doit avoir une raison d'y être.
 
 ## Des licences qui coûtent cher si elles tournent à vide
 
-Autodesk facture Revit environ 3 132 € par an et par poste, AutoCAD environ 2 184 € par an. La suite AEC Collection complète (Revit, AutoCAD, Navisworks, Civil 3D, Robot) approche les 3 450 € par utilisateur et par an. Un engagement de trois ans fige le tarif AutoCAD à 6 552 €, à l'abri des hausses annuelles.
+Revit, Navisworks ou une suite AEC complète représentent plusieurs milliers d'euros par poste et par an : vérifiez les tarifs en vigueur auprès de l'éditeur ou de votre revendeur. Sur un poste qui produit des maquettes et des plans à temps plein, l'investissement se justifie. Le gaspillage apparaît quand la licence reste inutilisée faute d'un poste durablement occupé.
 
-Sur un poste qui produit des plans de coffrage, des maquettes numériques ou des synthèses de clashs à temps plein, l'investissement se justifie sans discussion. Le vrai gaspillage apparaît quand la licence tourne à moitié vide, faute d'un poste durablement occupé, ce qui ramène une fois de plus à la question du recrutement et du plan de charge.
-
-Une équipe formée sur Revit, AutoCAD et Civil 3D, intégrée à temps plein dans la maquette du bureau d'études, rentabilise ces licences bien mieux qu'un poste vacant six semaines sur deux.
+C'est souvent là que se joue la décision : un [modeleur BIM Revit dédié](/services/bim-revit), intégré à temps plein dans votre maquette et sur vos licences, rentabilise mieux l'outil qu'un poste vacant plusieurs semaines. Pour les règles d'accès à distance à vos maquettes, voyez notre article sur [la confidentialité des plans](/blog/rgpd-confidentialite-relais-dedie).
 
 ---
 
-Un projet BIM niveau 2 en cours et une maquette à tenir sans creux de production ? Parlons de votre besoin, sans détour.
+Une maquette à tenir sans creux de production ? Parlons de votre convention BIM et de votre plan de charge.

@@ -7,6 +7,7 @@ export const contactSchema = z.object({
   email: z.string().trim().email('Adresse email invalide').max(200),
   phoneOrSpecialty: z.string().trim().max(120).optional().default(''),
   cvLink: z.string().trim().max(500).optional().default(''),
+  service: z.string().trim().max(80).optional().default(''),
   message: z.string().trim().min(1, 'Le message est requis').max(5000),
 });
 

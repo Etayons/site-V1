@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getAllPostSlugs, getAllPosts, getPostBySlug } from '@/lib/blog';
+import { getService } from '@/data/services';
 
 const BASE_URL = 'https://etayons.fr';
 const OG_IMAGE = `${BASE_URL}/og-image.png`;
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const url = `${BASE_URL}/blog/${slug}`;
 
   return {
-    title: post.title,
+    title: post.seoTitle,
     description: post.excerpt,
     authors: [{ name: post.author }],
     alternates: { canonical: url },
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: post.excerpt,
       url,
       publishedTime: post.date,
-      modifiedTime: post.date,
+      modifiedTime: post.updated,
       authors: [post.author],
       section: post.category,
       images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: post.title }],
@@ -70,11 +71,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const url = `${BASE_URL}/blog/${slug}`;
 
-  // Maillage interne : jusqu'à 3 autres articles, pour croiser les liens et
-  // garder le lecteur (et Google) sur le site.
-  const relatedPosts = getAllPosts()
-    .filter((p) => p.slug !== slug)
-    .slice(0, 3);
+  // Maillage interne : les articles choisis par thème dans le frontmatter
+  // (`related`), complétés par les plus récents si besoin, 3 au maximum.
+  const others = getAllPosts().filter((p) => p.slug !== slug);
+  const chosen = post.related
+    .map((s) => others.find((p) => p.slug === s))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const relatedPosts = [...chosen, ...others.filter((p) => !chosen.includes(p))].slice(0, 3);
+
+  // Prestation liée : le CTA de fin d'article mène à la bonne page service
+  // et pré-remplit le formulaire.
+  const service = getService(post.service);
+  const contactHref = service ? `/contact?service=${service.slug}` : '/contact';
 
   // Donnée structurée article : indique à Google le type de contenu, la date,
   // l'auteur et l'éditeur. Condition d'éligibilité aux résultats enrichis.
@@ -85,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: post.excerpt,
     image: [OG_IMAGE],
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated,
     inLanguage: 'fr-FR',
     articleSection: post.category,
     author: { '@type': 'Organization', name: post.author, url: BASE_URL },
@@ -172,6 +180,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <time dateTime={post.date} itemProp="datePublished">
                   {formatDate(post.date)}
                 </time>
+                {post.updated !== post.date && (
+                  <>
+                    <span aria-hidden="true" className="text-white/30">
+                      ·
+                    </span>
+                    <span>
+                      Mis à jour le{' '}
+                      <time dateTime={post.updated} itemProp="dateModified">
+                        {formatDate(post.updated)}
+                      </time>
+                    </span>
+                  </>
+                )}
                 <span aria-hidden="true" className="text-white/30">
                   ·
                 </span>
@@ -191,15 +212,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
               <footer className="mt-14 border-t border-line pt-10">
                 <p className="mb-6 text-base text-muted">
-                  Un besoin de renfort sur vos études ? Parlons de votre plan de charge.
+                  {service
+                    ? `Besoin d'un renfort en ${service.menuLabel.toLowerCase()} ? Chiffrons votre besoin.`
+                    : 'Un besoin de renfort sur vos études ? Parlons de votre plan de charge.'}
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Link href="/contact" className="btns">
-                    Discutons de votre projet
+                  <Link href={contactHref} className="btns">
+                    Chiffrer mon besoin
                   </Link>
-                  <Link href="/blog" className="btnp-light">
-                    Voir tous les articles
-                  </Link>
+                  {service ? (
+                    <Link href={`/services/${service.slug}`} className="btnp-light">
+                      Voir la prestation
+                    </Link>
+                  ) : (
+                    <Link href="/services" className="btnp-light">
+                      Nos prestations
+                    </Link>
+                  )}
                 </div>
               </footer>
 

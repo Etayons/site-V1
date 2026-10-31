@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { jobs } from '@/data/jobs';
+import { services } from '@/data/services';
 import { getAllPosts } from '@/lib/blog';
 
 const BASE_URL = 'https://etayons.fr';
@@ -21,6 +22,7 @@ const PAGE_UPDATED: Record<string, string> = {
   '/carriere': '2026-07-18',
   '/blog': '2026-07-18',
   '/contact': '2026-07-18',
+  '/services': '2026-10-31',
 };
 
 /** Dernière révision des fiches de poste (reprise des 6 PDF sources). */
@@ -41,11 +43,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const servicePages = services.map((s) => ({
+    url: `${BASE_URL}/services/${s.slug}`,
+    lastModified: new Date('2026-10-31'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }));
+
   const posts = getAllPosts();
 
   const blogPages = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updated),
     changeFrequency: 'yearly' as const,
     priority: 0.6,
   }));
@@ -59,5 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     blogIndex.changeFrequency = 'weekly';
   }
 
-  return [...staticPages, ...jobPages, ...blogPages];
+  return [...staticPages, ...servicePages, ...jobPages, ...blogPages];
 }

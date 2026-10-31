@@ -54,6 +54,7 @@ export async function POST(request: NextRequest) {
     `${isCompany ? 'Nom & prénom' : 'Nom'} : ${data.name}`,
     `${isCompany ? 'Société' : 'Prénom'} : ${data.secondField}`,
     `Email : ${data.email}`,
+    ...(isCompany && data.service ? [`Prestation : ${data.service}`] : []),
     `${isCompany ? 'Téléphone' : 'Spécialité'} : ${data.phoneOrSpecialty}`,
     ...(isCompany ? [] : [`Lien CV / portfolio : ${data.cvLink}`]),
     '',
