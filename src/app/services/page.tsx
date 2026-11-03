@@ -82,20 +82,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f8fa] py-16 sm:py-20">
+      <section className="bg-marine py-16 text-white sm:py-20">
         <div className="wrap">
-          <div className="eyb">Démarrage</div>
-          <h2 className="mt-3 max-w-2xl text-2xl font-semibold text-marine sm:text-3xl">
+          <div className="eyb text-gold">Démarrage</div>
+          <h2 className="mt-3 max-w-2xl text-2xl font-semibold sm:text-3xl">
             De votre besoin au premier jour travaillé
           </h2>
           <ol className="m-0 mt-10 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
-              <li key={step.title} className="min-w-0 rounded-lg border border-line bg-white p-5">
+              <li key={step.title} className="min-w-0 rounded-lg border border-white/10 bg-white/5 p-5">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-sm bg-gold font-semibold text-marine">
                   {i + 1}
                 </span>
-                <div className="mt-4 font-semibold text-marine">{step.title}</div>
-                <p className="mt-1 text-sm leading-6 text-muted">{step.text}</p>
+                <div className="mt-4 font-semibold text-white">{step.title}</div>
+                <p className="mt-1 text-sm leading-6 text-blue-gray">{step.text}</p>
               </li>
             ))}
           </ol>
