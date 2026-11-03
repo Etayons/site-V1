@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
 
-      <section className="gridbg relative bg-marine pb-16 pt-28 text-white sm:pt-32">
+      <section className="gridbg relative flex min-h-[475px] flex-col justify-start bg-marine pb-16 pt-32 text-white">
         <div className="wrap">
           <EyebrowBadge>Prestation · Relais dédié</EyebrowBadge>
           <h1 className="mt-5 max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">{service.title}</h1>
