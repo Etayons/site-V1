@@ -60,10 +60,6 @@ export default function Hero() {
          contrairement à `vh` et évite le saut de mise en page au défilement. */
       className="gridbg relative flex flex-col justify-center overflow-hidden bg-marine text-white sm:min-h-[540px] lg:min-h-[calc(100svh-96px)]"
     >
-      <div
-        className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full opacity-15"
-        style={{ background: 'radial-gradient(circle, oklch(0.78 0.14 78) 0%, transparent 70%)' }}
-      />
       <div className="wrap relative grid w-full items-center gap-12 py-16 lg:grid-cols-[1.8fr_1fr]">
         <div>
           <div data-hero="reveal" className="glass inline-block px-4 py-2">
