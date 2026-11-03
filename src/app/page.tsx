@@ -99,10 +99,6 @@ export default function HomePage() {
             <div className="mt-8 font-medium text-gold-onlight">Découvrir notre méthodologie →</div>
           </Link>
           <Link href="/carriere" className="pil relative overflow-hidden bg-marine p-12 text-white">
-            <div
-              className="absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-20"
-              style={{ background: 'radial-gradient(circle, oklch(0.78 0.14 78), transparent 70%)' }}
-            />
             <div className="eyb text-gold">Carrière</div>
             <h2 className="mt-6 text-2xl font-semibold">
               Rejoignez l&apos;excellence de l&apos;ingénierie francophone.
