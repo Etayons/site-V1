@@ -7,6 +7,9 @@ import { getService } from '@/data/services';
 type Mode = 'entreprise' | 'candidat';
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
+// Clé Web3Forms : publique par conception, prévue pour un usage côté navigateur.
+const WEB3FORMS_ACCESS_KEY = '550ff9b7-a5c8-40e1-961b-9e4f73eab288';
+
 const labels: Record<Mode, { name: string; second: string; fourth: string; message: string }> = {
   entreprise: {
     name: 'Nom & prénom',
@@ -55,21 +58,41 @@ function ContactFormInner() {
     setStatus('sending');
     setErrorMessage('');
     try {
-      const res = await fetch('/api/contact', {
+      // Envoi direct depuis le navigateur : Web3Forms refuse les appels faits
+      // depuis un serveur (403), d'où l'abandon du passage par /api/contact.
+      const isCompany = mode === 'entreprise';
+      const lines = [
+        `${isCompany ? 'Nom & prénom' : 'Nom'} : ${fields.name}`,
+        `${isCompany ? 'Société' : 'Prénom'} : ${fields.secondField}`,
+        `Email : ${fields.email}`,
+        ...(isCompany && service ? [`Prestation : ${service.formValue}`] : []),
+        `${isCompany ? 'Téléphone' : 'Spécialité'} : ${fields.phoneOrSpecialty}`,
+        ...(isCompany ? [] : [`Lien CV / portfolio : ${fields.cvLink}`]),
+        '',
+        'Message :',
+        fields.message || 'Non renseigné',
+      ];
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          mode,
-          ...fields,
-          service: service?.formValue ?? '',
-          message: fields.message || 'Non renseigné',
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: isCompany
+            ? `[Site Etayons] Demande de Relais : ${fields.secondField || fields.name}`
+            : `[Site Etayons] Candidature : ${fields.name} ${fields.secondField}`,
+          from_name: 'Site Etayons',
+          email: fields.email,
+          replyto: fields.email,
+          message: lines.join('\n'),
         }),
       });
-      const json: { success?: boolean; error?: string } = await res.json();
-      if (!res.ok || !json.success) {
-        throw new Error(json.error ?? "L'envoi a échoué.");
+      const json = (await res.json().catch(() => null)) as { success?: boolean } | null;
+      if (!res.ok || !json?.success) {
+        throw new Error(
+          "L'envoi a échoué. Vous pouvez nous écrire directement à contact@etayons.fr."
+        );
       }
-      // Mesure : événement poussé uniquement après une réponse OK de /api/contact.
+      // Mesure : événement poussé uniquement après une réponse OK de Web3Forms.
       // Aucune donnée personnelle n'est envoyée à Analytics.
       const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
       w.dataLayer = w.dataLayer ?? [];
