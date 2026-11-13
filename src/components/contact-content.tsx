@@ -107,7 +107,7 @@ export default function ContactContent() {
               </InfoRow>
               <InfoRow icon={<ShieldIcon />} title="Cadre">
                 <p>Contrat-cadre B2B</p>
-                <p>NDA systématique</p>
+                <p>NDA et RGPD</p>
                 <p>Confidentialité industrielle</p>
               </InfoRow>
             </div>
