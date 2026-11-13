@@ -27,6 +27,7 @@ const pillars = [
     number: '03',
     title: 'Performance',
     text: 'Continuité de production, flexibilité contractuelle et réactivité absolue grâce à un fuseau horaire aligné. Électricité et connexion internet sécurisées par un système de secours.',
+    link: { href: '/a-propos', label: 'Nos engagements →' },
   },
 ];
 
@@ -61,6 +62,14 @@ export default function HomePage() {
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-marine">{pillar.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted">{pillar.text}</p>
+              {pillar.link && (
+                <Link
+                  href={pillar.link.href}
+                  className="mt-4 inline-block text-sm font-medium text-gold-onlight"
+                >
+                  {pillar.link.label}
+                </Link>
+              )}
                 <div className="mt-8 h-px w-12 bg-gold-dark" />
               </article>
             ))}
