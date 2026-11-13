@@ -56,7 +56,11 @@ const governanceItems = [
   },
   {
     title: 'Confidentialité industrielle',
-    text: "NDA signé avant toute mission, droits d'accès limités au strict nécessaire, projets cloisonnés et assurance cyber-risques incluse. Vos données techniques restent les vôtres.",
+    text: "NDA signé avant toute mission, droits d'accès limités au strict nécessaire, projets cloisonnés, postes verrouillés (ports USB désactivés), connexion VPN sécurisée et assurance cyber-risques incluse. Vos données techniques restent les vôtres.",
+  },
+  {
+    title: 'Continuité de service',
+    text: "Groupe électrogène à déclenchement instantané et connexion internet de secours indépendante (satellite ou faisceau hertzien) dans nos bureaux d'Antananarivo. Votre Relais reste joignable sur vos horaires, même en cas de coupure du réseau. Disponibilité supérieure à 99 % aux heures de bureau françaises, inscrite au contrat.",
   },
   {
     title: 'Vous restez libres',
@@ -64,11 +68,11 @@ const governanceItems = [
   },
   {
     title: 'Rémunération juste, impact réel',
-    text: "Salaires positionnés dans le haut du marché malgache de l'ingénierie, protection sociale complète et cadre de travail premium. Choisir Etayons, c'est créer de l'emploi qualifié durable à Madagascar, pas acheter du low-cost.",
+    text: "Salaires positionnés dans le haut du marché malgache de l'ingénierie, protection sociale complète avec mutuelle, primes de fidélité sur la durée et cadre de travail premium. Choisir Etayons, c'est créer de l'emploi qualifié durable à Madagascar, pas acheter du low-cost.",
   },
   {
     title: 'Développement des talents',
-    text: "Formation continue, certifications logicielles, mentorat par des seniors et parcours de carrière structuré. Un Relais qui progresse, c'est une compétence qui grandit au service de votre équipe.",
+    text: "Formation continue chaque mois aux méthodes françaises (Eurocodes, RE2020, évolutions du BIM) et aux outils (nouvelles versions, plug-ins Revit), certifications logicielles, mentorat par des seniors et parcours de carrière structuré. Un Relais qui progresse, c'est une compétence qui grandit au service de votre équipe.",
   },
   {
     title: 'Éthique du recrutement',
