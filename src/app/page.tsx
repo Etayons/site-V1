@@ -26,7 +26,7 @@ const pillars = [
   {
     number: '03',
     title: 'Performance',
-    text: 'Continuité de production, flexibilité contractuelle et réactivité absolue grâce à un fuseau horaire aligné.',
+    text: 'Continuité de production, flexibilité contractuelle et réactivité absolue grâce à un fuseau horaire aligné. Électricité et connexion internet sécurisées par un système de secours.',
   },
 ];
 
