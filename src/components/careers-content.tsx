@@ -12,7 +12,7 @@ const employerBenefits = [
   },
   {
     title: 'Une rémunération dans le haut du marché',
-    text: "Salaires positionnés dans le haut du marché malgache de l'ingénierie, protection sociale complète et cadre de travail premium. Votre expertise reconnue à sa juste valeur.",
+    text: "Salaires positionnés dans le haut du marché malgache de l'ingénierie, protection sociale complète avec mutuelle, primes de fidélité sur la durée et cadre de travail premium. Votre expertise reconnue à sa juste valeur.",
   },
   {
     title: 'Une montée en compétences réelle',
