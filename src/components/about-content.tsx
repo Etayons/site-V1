@@ -56,7 +56,7 @@ const governanceItems = [
   },
   {
     title: 'Confidentialité industrielle',
-    text: "NDA signé avant toute mission, droits d'accès limités au strict nécessaire, projets cloisonnés, postes verrouillés (ports USB désactivés), connexion VPN sécurisée et assurance cyber-risques incluse. Vos données techniques restent les vôtres.",
+    text: "NDA signé avant toute mission, droits d'accès limités au strict nécessaire, projets cloisonnés, postes verrouillés (ports USB désactivés), connexion VPN sécurisée et assurance cyber-risques incluse. Conformité RGPD : clauses contractuelles types pour le transfert de données hors UE et registre des traitements. Vos données techniques restent les vôtres.",
   },
   {
     title: 'Continuité de service',
