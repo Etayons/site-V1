@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { jobs } from '@/data/jobs';
 import { services } from '@/data/services';
 
-const guarantees = ['Essai de 3 mois', 'Remplacement sous 30 jours', 'NDA systématique'];
+const guarantees = ['Essai de 3 mois', 'Remplacement sous 30 jours', 'NDA et RGPD'];
 
 export default function Footer() {
   return (
