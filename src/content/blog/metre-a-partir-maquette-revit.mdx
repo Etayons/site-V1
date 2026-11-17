@@ -1,0 +1,93 @@
+---
+title: "Métré à partir d'une maquette Revit : ce qu'il faut vérifier avant de chiffrer"
+seoTitle: "Métré à partir d'une maquette Revit : les vérifications"
+excerpt: "Métré à partir d'une maquette Revit : ce que valent les nomenclatures, les pièges du modèle et les contrôles à faire avant de remplir la DPGF."
+date: "2026-11-17"
+updated: "2026-11-17"
+author: "Équipe Etayons"
+category: "Chiffrage & études de prix"
+readingTime: "6 min"
+service: "bim-revit"
+related: "bim-niveau-2-conventions-licences, remplir-dpgf-sans-erreur, externaliser-metres-gros-oeuvre"
+---
+
+Le métré à partir d'une maquette Revit tente toutes les PME qui reçoivent un DCE avec maquette : quelques nomenclatures, et les quantités tombent toutes seules. En pratique, la maquette donne des quantités rapides, pas des quantités justes par défaut. Elle a été modélisée pour concevoir l'ouvrage, pas pour chiffrer votre lot. Voici ce qu'un chargé d'études de prix doit contrôler avant de reporter un seul chiffre dans la DPGF.
+
+> **En bref**
+>
+> - Le BIM n'est pas obligatoire en France, mais il est de plus en plus demandé dans les consultations, notamment par les bailleurs sociaux et les acheteurs publics (FFB, septembre 2026).
+> - En cas de litige, ce sont les pièces écrites et graphiques du marché qui font foi, pas la maquette, rappelle le guide de recommandations du Plan BIM 2022.
+> - Autodesk l'écrit dans sa documentation : les volumes et surfaces calculés par Revit peuvent être approximatifs dans certains cas.
+> - Avant d'extraire, vérifiez trois points : le niveau de détail, la catégorie des objets et la concordance avec les plans indicés.
+> - Une nomenclature de quantités utile suit le découpage de votre DPGF, pas celui du concepteur.
+
+## Peut-on faire confiance au métré à partir d'une maquette Revit ?
+
+Oui comme base de travail, non comme résultat final. La maquette accélère le métré et limite les oublis, à condition de contrôler ce qu'elle contient. Ses quantités dépendent entièrement de la façon dont elle a été modélisée.
+
+Le [guide de recommandations à la maîtrise d'ouvrage du Plan BIM 2022](https://www.ecologie.gouv.fr/sites/default/files/documents/BIM%202022%20-%20Guide%20de%20recommandations%20%C3%A0%20la%20maitrise%20d%27ouvrage%20%281566%29.pdf) range l'extraction des quantités parmi les usages du BIM. Il note que la maquette aide les entreprises à définir plus facilement les quantités et le niveau de prestation attendu pour établir leur offre. Mais le même guide précise que le rendu traditionnel « seul fera foi en cas de litige », la maquette pouvant seulement éclairer l'analyse. Si votre quantité Revit diverge du plan indicé, c'est le plan qui compte.
+
+Le logiciel lui-même pose des limites. La documentation d'Autodesk sur les relevés de matériaux indique que les volumes et surfaces calculés par Revit peuvent être approximatifs dans certains cas, avec de petits écarts sur certaines couches de murs selon les jonctions, rainures ou feuillures. Elle précise aussi que les murs-rideaux ne remontent pas de quantités de matériaux : il faut les chercher dans leurs panneaux.
+
+## Pourquoi la question se pose plus souvent en 2026 ?
+
+Parce que les maquettes arrivent dans les DCE, même sans obligation légale. Le maître d'ouvrage décide, et de plus en plus de maîtres d'ouvrage demandent du BIM. Savoir exploiter une maquette reçue devient une compétence de chiffrage.
+
+Dans une page mise à jour le 6 avril 2026, la [FFB fait le point sur l'obligation du BIM](https://www.ffbatiment.fr/techniques-batiment/bim-transformation-numerique/accompagnement-mise-en-pratique-bim/dossier/le-bim-obligatoire-en-france) : il n'existe pas à ce jour d'obligation générale, le recours au BIM relève du maître d'ouvrage dans le cadre du Code de la commande publique, et « c'est le marché qui va imposer le BIM ». En septembre 2026, la fédération ajoutait que le BIM est de plus en plus exigé, notamment par les bailleurs sociaux, et que le ministre chargé du logement avait évoqué, au salon BIM World du 2 avril 2026, une possible obligation future dans la commande publique. La FFB a lancé un parcours de sensibilisation en ligne pour ses adhérents et prépare avec Batys Compétences une formation dédiée à l'exploitation d'une maquette dans le cadre des appels d'offres.
+
+## Que vérifier dans la maquette avant d'extraire les quantités ?
+
+Trois choses : le niveau de détail, la catégorie des objets et la concordance avec les plans du DCE. Ce contrôle prend peu de temps et évite de corriger une DPGF entière après coup.
+
+### Le niveau de détail correspond-il à la phase ?
+
+Le guide du Plan BIM 2022 laisse au maître d'ouvrage le choix du niveau de détail, et cite le ferraillage parmi les éléments qui peuvent rester en plans 2D. Il prévient aussi que les épaisseurs et diamètres pourront être réajustés aux étapes suivantes. En phase DCE, ne cherchez donc pas les aciers dans la maquette : partez des plans de ferraillage ou de vos ratios, et notez l'hypothèse.
+
+### Les objets sont-ils dans la bonne catégorie ?
+
+Une nomenclature Revit filtre par catégorie. Un voile modélisé comme objet générique, ou un élément exporté en IFC sous une classe fourre-tout, disparaît du quantitatif sans prévenir. Notre article sur la [convention BIM et les classes IFC](/blog/bim-niveau-2-conventions-licences) détaille ce point de contrôle.
+
+### La maquette est-elle à jour avec les plans indicés ?
+
+Comparez la date ou l'indice de la maquette avec ceux des plans du DCE. Un écart d'indice suffit à fausser un lot. Écrivez la version utilisée dans vos hypothèses de chiffrage.
+
+## Comment construire une nomenclature de quantités Revit utile pour la DPGF ?
+
+En partant de la DPGF, pas de la maquette. Chaque nomenclature répond à un ou plusieurs postes, avec les mêmes unités et le même découpage. Le résultat doit se relire comme un métré classique.
+
+- **Une nomenclature par famille d'ouvrage** : voiles, dalles, poteaux, poutres, fondations, avec le niveau et le matériau en colonnes.
+- **Brut ou net, à trancher** : Revit déduit les ouvertures selon ses propres règles. Vérifiez ce que demande le mode de métré du CCTP.
+- **Ce qui n'est pas modélisé, listé à part** : tout ce que la maquette ignore doit être métré sur plan, sinon il manque à l'offre.
+- **Un export avec calculs visibles** : la personne qui valide les prix doit pouvoir retrouver d'où vient chaque quantité.
+
+Pour la suite, notre méthode pour [remplir une DPGF sans erreur](/blog/remplir-dpgf-sans-erreur) reprend les contrôles à faire au moment du report.
+
+## Qui doit faire le métré sur maquette dans une PME du BTP ?
+
+Quelqu'un qui maîtrise à la fois Revit et le métré. Un modeleur seul extrait sans regard de chiffreur ; un chiffreur seul ne sait pas toujours interroger le modèle. Le dirigeant, lui, garde la décision sur les prix.
+
+La FFB donne un conseil simple pour tout outil de métré numérique : le tester sur un projet avant de le généraliser, et vérifier sa compatibilité avec votre logiciel de devis. La même prudence vaut pour une méthode d'extraction depuis Revit : un premier dossier comparé au métré sur plan vous dira où le modèle est fiable et où il ne l'est pas.
+
+Chez Etayons, un Relais, expert francophone basé à Madagascar et dédié à votre entreprise, prend en charge cette production. La page [modélisation BIM et Revit](/services/bim-revit) détaille le travail sur maquette, et la page [métrés et plans de structure béton armé](/services/structure-beton-arme) couvre le lot gros œuvre. Pour en parler à partir d'un DCE en cours, passez par la page [contact Etayons](/contact).
+
+## Questions fréquentes
+
+### Revit calcule-t-il automatiquement les quantités ?
+
+Oui, via les nomenclatures de quantités et les relevés de matériaux, qui donnent surfaces et volumes des éléments modélisés. Autodesk précise que ces valeurs peuvent être approximatives dans certains cas.
+
+### La maquette fait-elle foi face aux plans et à la DPGF ?
+
+Non. Selon le guide du Plan BIM 2022, ce sont les pièces écrites et graphiques du marché qui font foi en cas de litige. La maquette peut éclairer l'analyse.
+
+### Le BIM est-il obligatoire pour répondre à un appel d'offres ?
+
+Pas de façon générale, selon la FFB en avril 2026. Le maître d'ouvrage peut en revanche l'exiger dans sa consultation.
+
+### Faut-il refaire tout le métré à la main ?
+
+Non. Contrôlez par sondage les postes les plus lourds et métrez sur plan tout ce qui n'est pas modélisé. Sur un premier dossier, comparer les deux méthodes permet de calibrer votre confiance.
+
+### Peut-on externaliser le métré sur maquette sans perdre la main sur les prix ?
+
+Oui, si vous externalisez la production des quantités et gardez la décision sur les prix, les hypothèses et le choix des dossiers. Notre guide pour [externaliser les métrés gros œuvre](/blog/externaliser-metres-gros-oeuvre) détaille le cadrage.
